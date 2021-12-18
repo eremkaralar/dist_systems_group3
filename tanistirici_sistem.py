@@ -3,7 +3,7 @@ import threading
 import time
 import queue
 import uuid
-
+from sys import getsizeof
 
 class Write_Thread(threading.Thread):
     def __init__(self, name, client_socket, client_address, client_queue):
@@ -51,7 +51,9 @@ class Read_Thread(threading.Thread):
             uuid_id = uuid_id.int
         self.uuids.append(uuid_id)
         self.uuid_id = uuid_id
-
+        #Baglanti kurulmasi
+        responsehel = ("HE::" + str(uuid_id))
+        self.client_queue.put(responsehel)
         while True:
             data = self.client_socket.recv(1024).decode().strip()        
             return_value = self.incoming_parser(data)
