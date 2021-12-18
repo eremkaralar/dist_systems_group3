@@ -75,6 +75,34 @@ class Read_Thread(threading.Thread):
                 #baglanti testi basarisiz uuid ler uyusmamakta
                 response = "NG"
 
+        #Kendini Tanitis        
+        elif (data[:4] == "RG::"):
+         #2048 byte kurali  
+            if getsizeof(data) < 2048:
+                input = data[4:]
+                b = input.split("::")
+                if len(b) == 6:
+                    uuid_id = b[0]
+                    if (int(uuid_id) == int(self.uuid_id)) and (uuid_id not in self.fihrist.keys()):
+                        ipadres = b[1]
+                        portno = b[2]
+                        geoloc = b[3]
+                        sys_type = b[4]
+                        keyword = b[5]
+                        key = uuid_id
+                        values = ipadres + "::"+ portno + "::"+ geoloc + "::" + sys_type + "::" + keyword
+                        self.fihrist[key] = values
+                        response = "RO"
+                    else:
+                       response = "RN"     
+                else:
+                    response  = "ER"   
+            else:
+                response = "RN"
+
+        elif (data == "QU"):
+            response = "BY"
+            ret = 1 
         else:
             response = "ER"
 
