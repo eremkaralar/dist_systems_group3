@@ -4,6 +4,26 @@ import time
 import queue
 import uuid
 from sys import getsizeof
+import geopy.distance
+
+#En yakin peerleri bulma bug fix :: Kendini listeye eklemiyor
+def closest_peer(lal,long,num,geoloc_fihrist):
+    geo_dict = {}
+    restrainer = int(num)
+    for uuid,coor in geoloc_fihrist.items():
+        if restrainer != 0:
+            coor_div = coor.split(",")
+            coords_1 = (float(lal), float(long))
+            coords_2 = (float(coor_div[0]), float(coor_div[1]))
+            distance = geopy.distance.geodesic(coords_1, coords_2).km
+            if distance != 0:
+                geo_dict[uuid] = distance
+                restrainer -=1
+        else:
+            break
+
+    dict(sorted(geo_dict.items(), key=lambda item: item[1]))
+    return geo_dict
 
 class Write_Thread(threading.Thread):
     def __init__(self, name, client_socket, client_address, client_queue):
@@ -32,7 +52,7 @@ class Write_Thread(threading.Thread):
 
 
 class Read_Thread(threading.Thread):
-    def __init__(self, name, client_socket, client_address, client_queue, fihrist,uuids):
+    def __init__(self, name, client_socket, client_address, client_queue, fihrist,uuids,geoloc_fihrist):
         threading.Thread.__init__(self)
         self.name = name
         self.client_socket = client_socket
@@ -41,6 +61,8 @@ class Read_Thread(threading.Thread):
         self.fihrist = fihrist
         self.uuid_id = None
         self.uuids = uuids
+        self.geoloc_fihrist = geoloc_fihrist
+
     def run(self):
         print(f"{self.name} starting.")
         #UUID olusturma ve int seklinde kullanma
@@ -62,6 +84,8 @@ class Read_Thread(threading.Thread):
                 break
 
         print(f"{self.name} ending.")
+
+
     def incoming_parser(self, data):
         ret = 0
         #PING-PONG
@@ -77,9 +101,9 @@ class Read_Thread(threading.Thread):
 
         #Kendini Tanitis        
         elif (data[:4] == "RG::"):
-         #2048 byte kurali  
-            if getsizeof(data) < 2048:
-                input = data[4:]
+            #2048 byte kurali
+            input = data[4:]  
+            if getsizeof(input) < 2048:   
                 b = input.split("::")
                 if len(b) == 6:
                     uuid_id = b[0]
@@ -91,6 +115,7 @@ class Read_Thread(threading.Thread):
                         keyword = b[5]
                         key = uuid_id
                         values = ipadres + "::"+ portno + "::"+ geoloc + "::" + sys_type + "::" + keyword
+                        self.geoloc_fihrist[key] = geoloc
                         self.fihrist[key] = values
                         response = "RO"
                     else:
@@ -99,7 +124,24 @@ class Read_Thread(threading.Thread):
                     response  = "ER"   
             else:
                 response = "RN"
-
+        #Baglanti bilgilerini (geolaca gore) sorgulama       
+        elif (data[:4] =="CS::"):
+            #Bunu sorgulayan sistem kayitli mi kontrolu
+            if  str(self.uuid_id) in self.fihrist.keys():
+                response = "CO::BEGIN \n"
+                input = data[4:]
+                b = input.split("::")
+                geolocinput = b[0]
+                closestno = b[1]
+                coordination = geolocinput.split(",")
+                laltitude = coordination[0]
+                longitude = coordination[1]
+                sorted_uuids = closest_peer(laltitude,longitude,closestno,self.geoloc_fihrist)
+                for uuid_idx,distance in sorted_uuids.items():      
+                    response += "CO::" + str(uuid_idx) + "::" + self.fihrist.get(uuid_idx) + "\n"
+                response += "CO::END"
+            else:        
+                response = "RN"
         elif (data == "QU"):
             response = "BY"
             ret = 1 
@@ -123,7 +165,7 @@ def main():
 
     fihrist = {}
     uuids = []
-
+    geoloc_fihrist = {}
  
     print("Server is starting.")
     while True:
@@ -132,7 +174,7 @@ def main():
         message_queue = queue.Queue()
 
         write_thread = Write_Thread("WriteThread-" + str(thread_counter), client_socket, client_address, message_queue)
-        read_thread = Read_Thread("ReadThread-" + str(thread_counter), client_socket, client_address, message_queue, fihrist,uuids)
+        read_thread = Read_Thread("ReadThread-" + str(thread_counter), client_socket, client_address, message_queue, fihrist,uuids,geoloc_fihrist)
 
         read_thread.start()
         write_thread.start()
@@ -142,3 +184,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
