@@ -1,0 +1,76 @@
+{
+"pizzas": [
+    {
+        "name":"four cheese pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "cheese":"gr::500"
+    },
+    {
+        "name":"veggie pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "pizza_sauce":"ml::50",
+        "vegetable":"gr::200"
+    },
+    {
+        "name":"pepperoni pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "pizza_sauce":"ml::50",
+        "pepperoni":"gr::100"
+    },
+    {
+        "name":"meat pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "pizza_sauce":"ml::50",
+        "meat":"gr::100"
+    },
+    {
+        "name":"margarita pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "pizza_sauce":"ml::50",
+        "cheese":"gr::100"
+    },
+    {
+        "name":"bbq chicken pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "cheese":"gr::100",
+        "chicken":"gr::100"
+    },
+    {
+        "name":"hawaiian pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "pizza_sauce":"ml::50",
+        "ananas":"gr::200"
+    },
+    {
+        "name":"buffalo pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "buffalo_sauce":"ml::50",
+        "pepperoni":"gr::100"
+    },
+    {
+        "name":"supreme pizza",
+        "flour": "gr::100",
+        "salt": "gr::2",
+        "pizza_sauce":"ml::50",
+        "pepperoni":"gr::100",
+        "vegetable":"gr::200"
+    },
+    {
+      "name": "works pizza",
+      "flour": "gr::100",
+      "salt": "gr::2",
+      "pizza_sauce":"ml::50",
+      "cheese":"gr::100",
+      "vegetable":"gr::200",
+      "olive":"gr::50"
+    }
+]
+}
