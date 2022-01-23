@@ -153,7 +153,7 @@ class Read_Thread(threading.Thread):
         return ret
 
 def main():
-    port = 12345
+    port = 12340
     host = "0.0.0.0"
     thread_counter = 0
 
