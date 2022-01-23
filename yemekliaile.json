@@ -1,0 +1,99 @@
+{
+    "offers":[
+        {
+            "id": "1",
+            "name":"bezelye",
+            "unit":"tabak",
+            "quantity": 5,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 2
+        },
+        {
+            "id": "2",
+            "name":"bamya",
+            "unit":"tabak",
+            "quantity": 3,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 1
+
+        },
+        {
+            "id": "3",
+            "name":"karniyarik",
+            "unit":"adet",
+            "quantity": 10,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 6
+        },
+        {
+            "id": "4",
+            "name":"bulgur_pilavi",
+            "unit":"tabak",
+            "quantity": 10,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 3
+        },
+        {
+            "id": "5",
+            "name":"biber_dolmasi",
+            "unit":"adet",
+            "quantity": 15,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 7
+        },
+        {
+            "id": "6",
+            "name":"kuru_fasulye",
+            "unit":"tabak",
+            "quantity": 7,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 4
+        }
+    ],
+    "demands":[
+        {
+            "id": "1",
+            "name":"vegatable",
+            "unit":"gr",
+            "quantity": 200,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 2
+        },
+        {
+            "id": "2",
+            "name":"eggs",
+            "unit":"tabak",
+            "quantity": 10,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 2
+
+        },
+        {
+            "id": "3",
+            "name":"cheese",
+            "unit":"adet",
+            "quantity": 100,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 30
+        },
+        {
+            "id": "4",
+            "name":"sarj_kablosu",
+            "unit":"adet",
+            "quantity": 1,
+            "payment": "none",
+            "currency": "none",
+            "price": 0
+        }
+
+    ]
+}

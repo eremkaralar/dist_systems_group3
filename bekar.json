@@ -1,0 +1,61 @@
+{
+    "offers":[
+        {
+            "id": "1",
+            "name":"sarj_kablosu",
+            "unit":"adet",
+            "quantity": 1,
+            "payment": "none",
+            "currency": "none",
+            "price": 0
+        },
+        {
+            "id": "2",
+            "name":"cashier",
+            "unit":"adet",
+            "quantity": 1,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 5000
+        }
+    ],
+    "demands":[
+        {
+            "id": "1",
+            "name":"pepperoni",
+            "unit":"slice",
+            "quantity": 6,
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 60
+        },
+        {
+            "id": "2",
+            "name":"kuru_fasulye",
+            "unit":"tabak",
+            "quantity": 2,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 8
+
+        },
+        {
+            "id": "3",
+            "name":"bulgur_bilavi",
+            "unit":"tabak",
+            "quantity": 1,
+            "payment": "bulasik",
+            "currency": "tabak",
+            "price": 3
+        },
+        {
+            "id": "4",
+            "name":"sefkatli_sarilma",
+            "unit":"adet",
+            "quantity": 1,
+            "payment": "none",
+            "currency": "none",
+            "price": 0
+        }
+    ]
+}

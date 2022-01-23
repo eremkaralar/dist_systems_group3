@@ -1,0 +1,98 @@
+{
+    "offers":[
+        {
+            "id": "1",
+            "name":"tuna",
+            "unit":"slice",
+            "quantity": 1000,
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 60
+        },
+        {
+            "id": "2",
+            "name":"margarita",
+            "unit":"slice",
+            "quantity":"1000",
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 40
+
+        },
+        {
+            "id": "3",
+            "name":"pepperoni",
+            "unit":"slice",
+            "quantity":"1000",
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 60
+        },
+        {
+            "id": "4",
+            "name":"vegetarian",
+            "unit":"slice",
+            "quantity":"1000",
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 40
+        },
+        {
+            "id": "5",
+            "name":"hawaiian",
+            "unit":"slice",
+            "quantity":"1000",
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 50
+        },
+        {
+            "id": "6",
+            "name":"four_cheese",
+            "unit":"slice",
+            "quantity":"1000",
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 40
+        }
+    ],
+    "demands":[
+        {
+            "id": "1",
+            "name":"flour",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 20
+        },
+        {
+            "id": "2",
+            "name":"salt",
+            "unit":"gr",
+            "quantity": 100,
+            "payment": "TRY",
+            "currency": "credit",
+            "price": 12
+
+        },
+        {
+            "id": "3",
+            "name":"vegetable",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "TRY",
+            "currency": "credit",
+            "price": 10
+        },
+        {
+            "id": "3",
+            "name":"pepperoni",
+            "unit":"gr",
+            "quantity": 500,
+            "payment": "TRY",
+            "currency": "credit",
+            "price": 40
+        }
+    ]
+}

@@ -1,0 +1,79 @@
+{
+    "offers":[
+        {
+            "id": "1",
+            "name":"flour",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 20
+        },
+        {
+            "id": "2",
+            "name":"salt",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 12
+
+        },
+        {
+            "id": "3",
+            "name":"vegetable",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 10
+        },
+        {
+            "id": "4",
+            "name":"cheese",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 30
+        },
+        {
+            "id": "5",
+            "name":"pepperoni",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 40
+        },
+        {
+            "id": "6",
+            "name":"olive",
+            "unit":"gr",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 20
+        },
+        {
+            "id": "7",
+            "name":"eggs",
+            "unit":"adet",
+            "quantity": 1000,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 3
+        }
+    ],
+    "demands":[
+        {
+            "id": "1",
+            "name":"cashier",
+            "unit":"adet",
+            "quantity": 1,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 4250
+        }
+    ]
+}

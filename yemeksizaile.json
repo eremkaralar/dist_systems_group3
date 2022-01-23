@@ -1,0 +1,43 @@
+{
+    "offers":[
+        {
+            "id": "1",
+            "name":"sefkatli_sarilma",
+            "unit":"adet",
+            "quantity": 1,
+            "payment": "none",
+            "currency": "none",
+            "price": 0
+        }
+    ],
+    "demands":[
+        {
+            "id": "1",
+            "name":"margarita",
+            "unit":"slice",
+            "quantity": 8,
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 40
+        },
+        {
+            "id": "2",
+            "name":"hawaiian",
+            "unit":"slice",
+            "quantity": 8,
+            "payment": "cash",
+            "currency": "TRY",
+            "price": 50
+
+        },
+        {
+            "id": "3",
+            "name":"cheese",
+            "unit":"gr",
+            "quantity": 500,
+            "payment": "credit",
+            "currency": "TRY",
+            "price": 30
+        }
+    ]
+}
